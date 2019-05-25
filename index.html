@@ -1,25 +1,15 @@
-<html>
+<!DOCTYPE html>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>自渡</title>
-<mce:style><!--
-body { margin: 0px;  }
-iframe {border: 0px;}
---></mce:style><style mce_bogus="1">body { margin: 0px;  }
-iframe {border: 0px;}</style>
+    <title>iframe宽度高度自适应</title>
 </head>
-<mce:script type="text/javascript"><!--
-		function resize(){
-			document.getElementById('frame3d').style.height = document.body.clientHeight - 84+"px";
-		}
-		window.onresize = resize;
-		
-// --></mce:script>
-<body scroll="no">
-
-<iframe id="frame3d" name="frame3d" frameborder="0" width="100%" scrolling="auto"
-	style="margin-top: -4px;" onload="this.style.height=document.body.clientHeight-84"
-	height="100%" src="http://www.wushuo.xyz" ></iframe> 
+<body id="body" height="100%">
+<script type="text/javascript">
+    //设置body高度为浏览器高度，当然也可以不设置   
+    document.getElementsByTagName('body')[0].style.height = window.innerHeight+'px';
+</script>
+    <!--iframe的高度设置为父元素的高度即可实现高度自适应-->
+    <!--这边以body为父元素，当然也可以以div之类的元素为父元素-->
+    <iframe name="Info1" id="Info1" src="http://www.wushuo.xyz" onload="this.height=body.offsetHeight" width="100%" scrolling="true" frameborder="0"></iframe>
 </body>
 </html>
